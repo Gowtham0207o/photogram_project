@@ -3,6 +3,7 @@ include 'libs/load.php';
 ?>
 <!doctype html>
 <html lang="en">
+
  <?php load_template("head")?>
   <body>
   <header>
@@ -14,7 +15,7 @@ load_template("header"); ?>
 <br>
 <main>
 
- <?php load_template("_login"); ?>
+ <?php load_template("_signup"); ?>
 
 </main>
 

@@ -4,6 +4,11 @@ function load_template($value){
     include $_SERVER['DOCUMENT_ROOT']."/app/_templates/$value.php";
 }
 function check_login($user,$pass){
+  $servername = "mysql.selfmade.ninja";
+  $username = "gowtham032";
+  $password = "gowtham@@@2003";
+  $dbname = "gowtham032_photogram_login";
+  
     if($user == "gowthamravi032@gmail.com" and $pass == "password" ){
         return true;
     }else{

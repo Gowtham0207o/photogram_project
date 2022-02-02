@@ -1,6 +1,6 @@
 body{
     background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh0aHkWHna0ldHT6xkwfLG-QUdoQwjidNX3A&usqp=CAU");
-     background-repeat:no-repeat;
+     background-repeat:repeat-y;
      background-size:100% 100%;
      background-attachment: scroll;
     } 

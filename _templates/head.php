@@ -6,6 +6,8 @@
     <meta name="author" content="gowtham mass">
     <meta name="generator" content="Hugo 0.88.1">
     <title>photogram project</title>
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRwN5l_VHGb7jCrrXo8llhB4YWe-l0m245TQ&usqp=CAU">
+
 
     
 

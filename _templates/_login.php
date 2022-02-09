@@ -1,10 +1,27 @@
 <?php
+$check=false;
+if (isset($_POST['submit']))
+{
 $username = $_POST['email_id'];
 $password = $_POST['password'];
-$result=check_login($username,$password);
-if ($result){
-  print "login success";
-}else{
+$result = login_check($username,$password);
+$check=true;
+}
+if ($check){
+    if (!$result){
+      header('location:/app');
+} if($result){
+  ?>
+  <main class="container">
+  <div class="bg-dark p-3"  style=margin:-1px;>
+    <h1 style=color:white;>signup failed</h1>
+    <p class="lead" style=color:white;> <?echo "$result";?></p>
+  </div>
+</main>
+<? 
+}
+}
+
 ?>
 <main class="form-signin">
   <form method="POST" action="login.php">
@@ -26,7 +43,7 @@ if ($result){
       </label>
       <a href="#">forgetten password?</a>
     </div>
-    <button class="w-100 btn btn-lg btn-primary hvr-shrink"type="submit">Sign in</button>
+    <button class="w-100 btn btn-lg btn-primary hvr-shrink" name="submit"type="submt">Sign in</button>
     <br>
     <br>
     <p style="color:beige;">New user??</p>
@@ -34,9 +51,7 @@ if ($result){
     <p class="mt-5 mb-3 text-muted">© 2021-2028</p>
   </form>
 </main>
-<?php
-} 
-?>
+
 
 
 

@@ -1,4 +1,7 @@
 <?php
+include_once 'includes_class/mic.class.php';
+include_once 'includes_class/database_class.php';
+
 
 function load_template($value){
     include $_SERVER['DOCUMENT_ROOT']."/app/_templates/$value.php";
@@ -7,10 +10,7 @@ function load_template($value){
 
 
 function check_login($user,$pass){
-  $servername = "mysql.selfmade.ninja";
-  $username = "gowtham032";
-  $password = "gowtham@@@2003";
-  $dbname = "gowtham032_photogram_login";
+database::get_connection();
 
     if($user == "gowthamravi032@gmail.com" and $pass == "password" ){
         return true;
@@ -24,10 +24,9 @@ function signup($user,$email,$phone,$pass){
     $username = "gowtham032";
     $password = "gowtham@@@2003";
     $dbname = "gowtham032_photogram_login";
-    
     // Create connection
-    
-    $conn = new mysqli($servername, $username, $password, $dbname);
+  
+     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
@@ -51,14 +50,14 @@ function login_check($user,$pass)
   $username = "gowtham032";
   $password = "gowtham@@@2003";
   $dbname = "gowtham032_photogram_login";
+  
+  // Create connection
+  $conn= new mysqli($servername, $username, $password, $dbname);
+  if($conn->connect_error){
 
-      // Create connection
-    
-      $conn = new mysqli($servername, $username, $password, $dbname);
-      // Check connection
-      if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-      }
+      die("connection error".$conn->connect_error); //todo handle connecction with exception handling
+  
+  }
   
     $sql="SELECT * FROM `authentication` WHERE `email` = '$user' AND `password` = '$pass' ";
    $quer=mysqli_query($conn,$sql);
@@ -67,7 +66,7 @@ function login_check($user,$pass)
     if($num > 0) {
       $result=false;
     }else{
-      $result="please enter the validate credential";
+      $result="please enter the valid credential";
     }
     $conn->close();
   return $result;

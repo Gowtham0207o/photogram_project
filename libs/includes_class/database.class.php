@@ -1,6 +1,6 @@
 <?php
-include '../load.php';
-class Database
+include __DIR__.'../load.php';
+class database
 {
 public static $conn= null;
 public static function get_connection(){
@@ -25,6 +25,13 @@ if (database::$conn==null){
     return database::$conn;
 }
 }
+public function __destruct()
+{
+    
+ database::$conn->close();
 }
+}
+
+
 
 ?>

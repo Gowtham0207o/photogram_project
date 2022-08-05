@@ -4,7 +4,7 @@ if (isset($_POST['submit']))
 {
 $username = $_POST['email_id'];
 $password = $_POST['password'];
-$result = login_check($username,$password);
+$result = check_login($username,$password);
 $check=true;
 }
 if ($check){

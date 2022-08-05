@@ -5,7 +5,7 @@ if (isset($_POST["username"]) and isset($_POST["email_id"]) and isset($_POST["ph
     $email_id=$_POST["email_id"];
     $phone=$_POST["phone"];
     $password=$_POST["password"];
-    $result=signup($username, $email_id, $phone, $password);
+    $result=check_signup($username, $email_id, $phone, $password);
     $check=true;
 }
 if ($check) {
@@ -20,6 +20,8 @@ if ($check) {
   <?
   } else{
     ?>
+
+    
     <main class="container">
     <div class="bg-dark p-3"  style=margin:-1px;>
       <h1 style=color:white;>signup failed</h1>

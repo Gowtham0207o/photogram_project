@@ -9,7 +9,7 @@
     print_r($_POST);
      print("_COOKIE"); 
     print_r($_COOKIE);
- if (signup("sadha","gowtham@gmail.com","9393939988","gowtham@@@2003")){
+ if (user::signup("sadha","gowtham@gmail.com","9393939988","gowtham@@@2003")){
     echo "success";
  }else{
      echo "failed";

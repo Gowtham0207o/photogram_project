@@ -2,19 +2,22 @@
 $check=false;
 if (isset($_POST['submit']))
 {
-$username = $_POST['email_id'];
+$emailId = $_POST['email_id'];
 $password = $_POST['password'];
-$result = check_login($username,$password);
+$result = user::login($emailId,$password);
 $check=true;
 }
 if ($check){
     if (!$result){
       header('location:/app');
-} if($result){
+      session::set('is_loggedin',true);
+
+
+}else{
   ?>
   <main class="container">
   <div class="bg-dark p-3"  style=margin:-1px;>
-    <h1 style=color:white;>signup failed</h1>
+    <h1 style=color:white;>login failed</h1>
     <p class="lead" style=color:white;> <?echo "$result";?></p>
   </div>
 </main>
@@ -34,7 +37,10 @@ if ($check){
     </div>
     <div class="form-floating">
       <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-      <label for="floatingPassword">Password</label>
+      <label for="floatingPassword" >Password</label>
+    
+      <!-- add the eye button -->
+
     </div>
 
     <div class="checkbox mb-3" style="color:beige;">
@@ -51,6 +57,26 @@ if ($check){
     <p class="mt-5 mb-3 text-muted">© 2021-2028</p>
   </form>
 </main>
+<script>
+        const togglePassword = document.querySelector("togglePassword");
+        const password = document.querySelector("password");
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+
+        // prevent form submit
+        const form = document.querySelector("form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
 
 
 

@@ -17,7 +17,7 @@ load_template("header"); ?>
 
  <?php load_template("_signup"); ?>
 
-</main>
+</main> 
 
 <footer class="text-muted py-5">
  <?php load_template("footer"); ?>

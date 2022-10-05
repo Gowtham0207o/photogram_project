@@ -5,7 +5,8 @@ if (isset($_POST["username"]) and isset($_POST["email_id"]) and isset($_POST["ph
     $email_id=$_POST["email_id"];
     $phone=$_POST["phone"];
     $password=$_POST["password"];
-    $result=check_signup($username, $email_id, $phone, $password);
+    $result=user::signup($username, $email_id, $phone, $password);
+    echo $result;
     $check=true;
 }
 if ($check) {
@@ -51,7 +52,7 @@ if ($check) {
       <label for="floatingInputphone">phone number</label>
     </div>
     <div class="form-floating">
-      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
       <label for="floatingPassword">Password</label>
 </div>
     <button class="w-100 btn btn-lg btn-primary hvr-shrink"type="submit">Sign up</button>

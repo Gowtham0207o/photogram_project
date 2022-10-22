@@ -1,17 +1,17 @@
 <?
-$check=false;
+$check = false;
 if (isset($_POST["username"]) and isset($_POST["email_id"]) and isset($_POST["phone"]) and isset($_POST["password"])) {
-    $username=$_POST["username"];
-    $email_id=$_POST["email_id"];
-    $phone=$_POST["phone"];
-    $password=$_POST["password"];
-    $result=user::signup($username, $email_id, $phone, $password);
+    $username = $_POST["username"];
+    $email_id = $_POST["email_id"];
+    $phone = $_POST["phone"];
+    $password = $_POST["password"];
+    $result = user::signup($username, $email_id, $phone, $password);
     echo $result;
-    $check=true;
+    $check = true;
 }
 if ($check) {
-  if (!$result){
-    ?><main class="container">
+    if (!$result) {
+        ?><main class="container">
     <div class="bg-dark p-4"  style=margin:-1px;>
       <h1 style=color:white;>signup success</h1>
       <p class="lead" style=color:white;> now you can signin and enjoy our app please use the below signin</p>
@@ -19,21 +19,20 @@ if ($check) {
     </div>
   </main>
   <?
-  } else{
-    ?>
+    } else {
+        ?>
 
-    
+
     <main class="container">
     <div class="bg-dark p-3"  style=margin:-1px;>
       <h1 style=color:white;>signup failed</h1>
-      <p class="lead" style=color:white;> <?echo "$result";?></p>
+      <p class="lead" style=color:white;> <?echo "$result"; ?></p>
     </div>
   </main>
- <? }
+ <?}
 
 }
 
-  
 ?>
 <main class="form-signup">
   <form method="POST" action="signup.php">

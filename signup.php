@@ -8,24 +8,24 @@ include 'libs/load.php';
   <body>
   <header>
 <?php
-load_template("header"); ?>
+load_template("header");?>
 
 </header>
 <br>
 <br>
 <main>
 
- <?php load_template("_signup"); ?>
+ <?php load_template("_signup");?>
 
-</main> 
+</main>
 
 <footer class="text-muted py-5">
- <?php load_template("footer"); ?>
+ <?php load_template("footer");?>
 </footer>
 
 
     <script src="/app/assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      
+
   </body>
 </html>

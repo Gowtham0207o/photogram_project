@@ -1,9 +1,10 @@
 <?php
-//include_once 'includes_class/mic.class.php';
+
 include $_SERVER['DOCUMENT_ROOT'] . "/app/libs/includes_class/user.class.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/app/libs/includes_class/logincheck.class.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/app/libs/includes_class/database.class.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/app/libs/includes_class/session.class.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/app/libs/includes_class/user_session.class.php";
 session_start();
 global $_siteconfig;
 $_siteconfig = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/../photogramconfig.json");

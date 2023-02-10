@@ -1,3 +1,18 @@
+
+<center>
+<div class="vue-uploadbox-wrap p-10 br-8 bg-lighten position-relative bg-main-5">
+  <div class="d-flex br-8 fg-white h-100 w-100 border-white border-dashed border-1 bg-main-5">
+    <div class="w-100 h-100 d-flex flex-column align-items-center justify-content-between">
+      <div class="d-flex flex-column align-items-center font-size-125 py-3">
+        <i class="fa fa-cloud-upload-alt fa-5x vue-uploadbox-icon"></i> 
+        <span class="px-1 text-center vue-uploadbox-drop-text">
+            Drop Files here
+        </span></div> <button class="btn btn-white font-size-125 font-weight-bold text-nowrap vue-uploadbox-file-button"><i class="fa fa-search"></i>
+        Choose File
+    </button> <div class="font-size-125 py-3 text-white d-flex flex-wrap justify-content-center"><span class="px-2 cursor-pointer text-nowrap" id="externalUrlButton" title="Enter the link of a file you want to use"><i class="fa fa-link"></i> Enter URL
+        </span> <span id="dropboxButton" title="Choose one or more files from Dropbox" class="px-2 cursor-pointer text-nowrap"><i class="fab fa-dropbox"></i> Dropbox
+        </span> <span id="gdriveButton" title="Choose one or more files from Google Drive" class="px-2 cursor-pointer text-nowrap"><i class="fab fa-google-drive"></i> Google Drive
+        </span></div></div> <!----></div></div></center>
 <div class="album py-5 bg-light">
       <div class="container">
 <div class="album py-5 bg-light">

@@ -1,0 +1,169 @@
+
+.bg-main-5.bg-lighten, .bg-main-5.bg-lighten.inherit *, .bg-main-5.inherit .bg-lighten, .bg-main-5.inherit .bg-lighten.inherit * {
+    background-color: #63bb67!important;
+}
+.vue-uploadbox-wrap {
+    height: 300px;
+    margin: 10px 0;
+    width:1000px;
+    align-items: center;
+}
+.btn-white {
+    background-color: #fff;
+}
+.position-relative {
+    position: relative!important;
+}
+
+.p-10 {
+    padding: 10px!important;
+}
+
+
+user agent stylesheet
+div {
+    display: block;
+}
+
+.h-100 {
+    height: 100%!important;
+}
+.w-100 {
+    width: 100%!important;
+}
+.d-flex {
+    display: -webkit-box!important;
+    display: flex!important;
+}
+.border-1 {
+    border-width: 1px;
+}
+.border-dashed {
+    border-style: dashed;
+}
+.border-white {
+    border-color: #fff;
+}
+.fg-white, .fg-white-hover:hover {
+    color: #fff;
+}
+
+.br-8 {
+    border-radius: 8px!important;
+}
+
+user agent stylesheet
+.align-items-center {
+    -webkit-box-align: center!important;
+    align-items: center!important;
+}
+
+.flex-column {
+    -webkit-box-orient: vertical!important;
+    flex-direction: column!important;
+}
+.flex-column, .flex-row {
+    -webkit-box-direction: normal!important;
+}
+
+.font-size-125 {
+    font-size: 1.25rem;
+}
+
+.pb-3, .py-3 {
+    padding-bottom: 1rem!important;
+}
+.pt-3, .py-3 {
+    padding-top: 1rem!important;
+}
+user agent stylesheet
+.vue-uploadbox-icon {
+    font-size: 5.25rem;
+}
+.fa-5x {
+    font-size: 5em;
+}
+.fa, .fab, .fad, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+.fa {
+    font-size: 1em;
+    line-height: normal;
+}
+
+user agent stylesheet
+i {
+    font-style: italic;
+}
+.text-center {
+    text-align: center!important;
+}
+
+.px-1 {
+    padding-left: 7px!important;
+    padding-right: 7px!important;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+
+.vue-uploadbox-file-button {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.font-weight-bold {
+    font-weight: 700!important;
+}
+.text-nowrap {
+    white-space: nowrap!important;
+}
+.font-size-125 {
+    font-size: 1.25rem;
+}
+.font-weight-bold, .font-weight-bold.inherit * {
+    font-weight: 600!important;
+}
+.btn, .btn-default, button {
+    border-radius: 4px;
+}
+
+.text-white {
+    color: #fff!important;
+}
+.font-size-125 {
+    font-size: 1.25rem;
+}
+.text-nowrap {
+    white-space: nowrap!important;
+}
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+}
+button, select {
+    text-transform: none;
+}
+button, input {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+button {
+    border-radius: 0;
+}
+.main{
+    background-color: gray;
+}
+

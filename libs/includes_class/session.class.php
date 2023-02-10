@@ -21,7 +21,7 @@ class session
         }
 
     }
-    function isset($key) {
+  public static function isset($key) {
         return isset($_SESSION[$key]);
 
     }
@@ -38,5 +38,6 @@ class session
         session_unset();
 
     }
+
 
 }

@@ -2,14 +2,14 @@
 
 class user
 {
-
+//here the login can be performed on both with the user name as well as id
     public function __construct($username)
     {
 
         $this->conn = database::get_connection();
         $this->username = $username;
         $this->id = null;
-        $sql = "SELECT * FROM `photogram_login` WHERE `username` = '$username' LIMIT 1";
+        $sql = "SELECT * FROM `photogram_login` WHERE `username` = '$username' OR `id`= '$username' LIMIT 1";
         $result = $this->conn->query($sql);
         if ($result->num_rows) {
             $rows = $result->fetch_assoc();
@@ -30,7 +30,7 @@ class user
         $sql = " INSERT INTO `photogram_login` (`username`, `password`, `phone`, `email`, `blocked`, `active`)
     VALUES ('$user','$pass','$phone', '$email', '0', '1');";
         $result = true;
-        if (database::$conn->query($sql) == true) {
+        if(database::$conn->query($sql) == 1) {
             $result = false;
         } else {
             $result = database::$conn->error;
@@ -49,7 +49,6 @@ class user
 
         $result = $conn->query($quer);
         $num = $result->num_rows;
-        echo $num;
 
         if ($num == 1) {
 
@@ -57,17 +56,19 @@ class user
 
             if (password_verify($pass, $row["password"])) {
 
-                return false;
+                /*
+                1.generate a token
+                2.insert the token to the database
+                3.build session and give session to the user
+                */
+
+                return $row;
             } else {
-                $ern = "please enter the valid credential password mismatch";
-                return $ern;
+               throw new exception("please check the user credential");
 
             }
         } else {
-
-            $er = "please enter the valid credentials";
-            return $er;
-
+           throw new exception("please signup before login");
         }
 
         database::$conn->close();
@@ -78,9 +79,11 @@ class user
         $property = preg_replace("/[^0-9a-zA-Z]/", "", substr($name, 3));
         $property = strtolower(preg_replace('/\B([A-Z])/', '_$1', $property));
         if (substr($name, 0, 3) == "get") {
-            return $this->_get_data($property);
+            return $this->get_data($property);
         } elseif (substr($name, 0, 3) == "set") {
-            return $this->_set_data($property, $arguments[0]);
+            return $this->set_data($property, $arguments[0]);
+        }else{
+            throw new exception("user::__call() -> $name is not available");
         }
     }
 
@@ -93,8 +96,8 @@ class user
         $result = $this->conn->query($quer);
 
         if ($result and $result->num_rows == 1) {
-
-            return $result->fetchassoc()[$var];
+$assoc=$result->fetch_assoc();
+           return $assoc[$var];
         } else {
             return null;
         }

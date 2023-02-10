@@ -4,12 +4,13 @@ $result=true;
 if(logincheck::check()){
   $result=false;
 }
+print($result);
 if(!$result){
 ?>
 <!doctype html>
 <html lang="en">
 
-<?php load_template("head")?>
+<?php load_template("head");?>
 <body>
  
 

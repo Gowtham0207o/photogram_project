@@ -1,19 +1,23 @@
 <?php
+
 $check=false;
 if (isset($_POST['submit']))
 {
 $emailId = $_POST['email_id'];
 $password = $_POST['password'];
-$result = user::login($emailId,$password);
 $check=true;
 }
 if ($check){
-    if (!$result){
+   try{
+      $token=user_session::authenticate($emailId,$password);
+      session::set('session_token',$token);
       header('location:/app');
-      session::set('is_loggedin',true);
+      //here we have to authorize through the token present in the session
+     
 
 
-}else{
+}catch(exception $result){
+  $result="please enter the valid credentials , If you're a new user please signup and try again!!";
   ?>
   <main class="container">
   <div class="bg-dark p-3"  style=margin:-1px;>

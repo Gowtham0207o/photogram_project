@@ -1,0 +1,8 @@
+body{
+
+    background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL3gz-sOu_LenaQETkm7dBxUXSh3tMrPpR2w&usqp=CAU");
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: 0% 0%;
+    background-size: 100% 100%;        
+} 

@@ -13,6 +13,9 @@
             <li><a href="https://www.linkedin.com/in/gowtham-ravi-7b7026229/" class="text-white">connect on linkedin</a></li>
             <li><a href="mailto:gowthamravi032@gmail.com" class="text-white">Email me</a></li>
           </ul>
+          <ul class="list-unstyled">
+          <li><button type="button" class="btn btn-secondary">Sign out</button><li>
+</ul>
         </div>
       </div>
     </div>

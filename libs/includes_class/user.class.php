@@ -30,6 +30,7 @@ class user
         $sql = " INSERT INTO `photogram_login` (`username`, `password`, `phone`, `email`, `blocked`, `active`)
     VALUES ('$user','$pass','$phone', '$email', '0', '1');";
         $result = true;
+        //here the database error should be treated with try catch
         if(database::$conn->query($sql) == 1) {
             $result = false;
         } else {

@@ -49,9 +49,7 @@ try
      VALUES ('$id' , '$token' , now() , '$ip' , '$user_agent' , '1');";
 
      $session_update=$conn->query($querys);
-     print($session_update);
      if($session_update){
-        print($token);
         return $token;
     
      }else{

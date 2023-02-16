@@ -37,6 +37,7 @@
 <?php
 include 'libs/load.php';
 
-$new= new user_session(28);
-$time=$new->isvalid();
-print($time);
+$value=user_session::authenticate("admin@mail.me","admin");
+session::set("session_id","7fe6a2549dd3c145826cec43c82231f2");
+print($value."\n");
+print(session::get("session_id"));

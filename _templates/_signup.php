@@ -47,7 +47,7 @@ if ($check) {
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input name="phone" type="text" class="form-control" id="floatingInputphone" placeholder="name@example.com" required>
+      <input name="phone" type="tel" class="form-control" id="floatingInputphone" placeholder="name@example.com" required>
       <label for="floatingInputphone">phone number</label>
     </div>
     <div class="form-floating">

@@ -25,12 +25,6 @@ session::destroy();
             <li><a href="https://www.linkedin.com/in/gowtham-ravi02/" class="text-white">connect on linkedin</a></li>
             <li><a href="mailto:gowthamravi032@gmail.com" class="text-white">Email me</a></li>
           </ul>
-          <form method="post" action="index.php">
-          <ul class="list-unstyled">
-
-          <li><button type="submit" name="submit" class="btn btn-secondary">Sign out</button><li>
-</ul>
-</form>
         </div>
       </div>
     </div>

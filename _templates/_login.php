@@ -1,5 +1,4 @@
 <?php
-
 $check=false;
 if (isset($_POST['submit']))
 {
@@ -9,11 +8,12 @@ $check=true;
 }
 if ($check){
    try{
-      $token=user_session::authenticate($emailId,$password);
-      session::set('session_token',$token);
-      header('location:/app');
-      //here we have to authorize through the token present in the session
-     
+  $token=user_session::authenticate($emailId,$password);
+
+
+      header('Location:/app/index.php');
+     // here we have to authorize through the token present in the session
+ 
 
 
 }catch(exception $result){

@@ -1,10 +1,11 @@
 <?php
+
 include 'libs/load.php';
+
 $result=true;
 if(logincheck::check()){
   $result=false;
 }
-print($result);
 if(!$result){
 ?>
 <!doctype html>
@@ -16,7 +17,9 @@ if(!$result){
 
  
   <header>
+
     <?php
+
       load_template("header");
 	?>
   </header>

@@ -37,7 +37,8 @@
 <?php
 include 'libs/load.php';
 
-$value=user_session::authenticate("admin@mail.me","password");
+$newa= user_session::authorize("230e46d19fe78a6c8dc715659a7188d7");
+print($newa);
 
-print(logincheck::check());
-session::set("session_id","7fe6a2549dd3c145826cec43c82231f2");
+// $new=user::login("gowtham@mail.me","pass");
+// print_r($new);

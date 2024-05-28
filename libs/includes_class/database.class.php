@@ -18,7 +18,7 @@ class database
 
             } else {
                 database::$conn = $conn;
-              
+         
                 return database::$conn;
 
             }

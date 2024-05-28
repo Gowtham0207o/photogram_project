@@ -31,8 +31,6 @@ public function getuser(){
 
 public static function authenticate($username,$pass)
 {
-
-
 try
 {
     $user_cred= user::login($username,$pass);

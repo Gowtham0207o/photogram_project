@@ -6,7 +6,7 @@ if (isset($_POST["username"]) and isset($_POST["email_id"]) and isset($_POST["ph
     $phone = $_POST["phone"];
     $password = $_POST["password"];
     $result = user::signup($username, $email_id, $phone, $password);
-    echo $result;
+ 
     $check = true;
 }
 if ($check) {

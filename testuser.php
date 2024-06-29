@@ -42,3 +42,6 @@ print($newa);
 
 // $new=user::login("gowtham@mail.me","pass");
 // print_r($new);
+
+// echo session::get("session_token");
+// echo "hello";

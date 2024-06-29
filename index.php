@@ -3,7 +3,8 @@
 include 'libs/load.php';
 
 $result=true;
-if(logincheck::check()){
+$token=session::get('session_token');
+if(isset($token)){
   $result=false;
 }
 if(!$result){

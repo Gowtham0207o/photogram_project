@@ -49,7 +49,7 @@ try
      $session_update=$conn->query($querys);
    
      if($session_update){
-        session::set('session_token',$token);
+      
         return $token;
     
      }else{
@@ -57,7 +57,7 @@ try
 
      }
 }catch(exception $e){
-    throw new exception($e);
+    throw new exception("Authentication failed:".$e);
 }
 }
 
@@ -66,6 +66,7 @@ public function isvalid(){
     $newt=strtotime("+60 minutes", strtotime($this->data['login_time']));
     $expiry=date('Y-m-d H:i:s', $newt);
     $time=date('Y-m-d H:i:s');
+    
     if($time <= $expiry){
     print("your session is valid");
     }else{
@@ -73,36 +74,40 @@ public function isvalid(){
     }
     }
     
-public static function authorize($token){
-    $quer="SELECT * FROM `session` WHERE `token` = '$token' LIMIT 1";
-    $conn = database::get_connection();
-    $result = $conn->query($quer);
-    $num = $result->num_rows;
-print($num);
-    if ($num == 1) {
-
-        $row = $result->fetch_assoc();
-
-    $user = new user_session($row['uid']);
-
-
-    $ipaddress = $_SERVER['REMOTE_ADDR'];
-print($ipaddress ."and" . $row['ip']);
-  
-    if($ipaddress==$row['ip'] ){
-        print("the token has been validated");
-     
-        return true;
-    }else{
-        print("the token is invalid");
-      return false;
-
+    public static function authorize($token) {
+        try {
+            $conn = database::get_connection();
+            $token = $conn->real_escape_string($token); // Sanitize token for security
+            
+            $query = "SELECT * FROM `session` WHERE `token` = '$token' AND `active` = 1 LIMIT 1";
+            $result = $conn->query($query);
+    
+            if (!$result) {
+                throw new Exception("Database query error: " . $conn->error);
+            }
+    
+            $num = $result->num_rows;
+            if ($num == 1) {
+                $row = $result->fetch_assoc();
+                $user_session = new user_session($row['uid']);
+                
+                // Check session validity
+                if ($user_session->isvalid()) {
+                    echo "The token has been validated."; // Replace with return true; if needed
+                    return true;
+                } else {
+                    echo "Session has expired.";
+                    return false;
+                }
+            } else {
+                echo "Token is invalid or session not found.";
+                return false;
+            }
+        } catch (Exception $e) {
+            throw new Exception("Authorization error: " . $e->getMessage());
+        }
     }
-}else{
-    print("the token is ikfkfknvalid");
-    return false;
-}
-}
+    
 
 
 

@@ -9,6 +9,7 @@ class session
     public static function set($key, $value)
     {
         $_SESSION[$key] = $value;
+        return true;
     }
 
     public static function get($key)
